@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Login</title>
+<script type="text/javascript">
+
+function validatetxtbox()
+{
+  if(document.forms["loginform"]["netidtextbox"].value == '')
+  {
+    alert('NetID/Username cannot be left blank');
+    return false;
+  }
+  if(document.forms["loginform"]["netidtextbox"].value.length != 9)
+  {
+    alert('NetID/Username has to be 9 characters long');
+    return false;
+  }
+  if(document.forms["loginform"]["passwordtextbox"].value == '')
+  {
+    alert('Password cannot be left blank');
+    return false;
+  }
+  return true;
+}
+</script>
+</head>
+<body>
+<center><b><h2>UTD Online Feedback System</h2></b></center>
+<form onSubmit="return (validatetxtbox());" name="loginform" action="Login_validation.php" method="POST">
+  <table>
+    <tr>      
+        <td>NetID/Username:</td><td><input type="text" name="netidtextbox" maxlength="9" /></td>
+    </tr>
+    <tr>
+        <td>Password:</td><td><input type="password" name="passwordtextbox" /></td>
+    </tr>
+    <tr>
+        <td><input type ="submit" value ="Submit"></td>
+    </tr>
+  </table>        
+</form>  
+</body>
+
+

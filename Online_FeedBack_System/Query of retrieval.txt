@@ -1,0 +1,9 @@
+select * from Feedback,Course_Schedule,CLO_Description where 
+Feedback.CRN = Course_Schedule.CRN and Course_Schedule.CId = CLO_Description.CId and 
+CLO_Description.CLO_No = Feedback.CLO_No and Feedback.CRN ='21734' and Course_Schedule.CId = 1;
+
+select Instructor_Info.Inst_Name,Course_Info.CName,SemYear,CRN,Course_Schedule.Status
+from Instructor_Info,Course_Info,Course_Schedule where
+Course_Schedule.CId = Course_Info.CId and
+Course_Schedule.Inst_SSN = Instructor_Info.Inst_SSN and
+SemYear = 'FALL 2011' and Course_Schedule.Status='SUBMITTED';
